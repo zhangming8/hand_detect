@@ -1,0 +1,6 @@
+classes= 1
+train  = /Users/ming/darknet/scripts/train.txt
+valid  = /Users/ming/darknet/scripts/test.txt
+names = /Users/ming/darknet/data/voc.names
+backup = backup
+

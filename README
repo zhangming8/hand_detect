@@ -1,0 +1,11 @@
+this hand detector is trained by yolov3-tiny
+environment: ubuntu, python2
+1. install darknet from https://pjreddie.com/darknet/yolo/
+2. change detect_camera_img.py in line 58 "/Users/ming/darknet/libdarknet.so" to your darknet path
+3. python detect_camera_img.py
+
+if you want to train the hand detector, make sure you can train yolo on VOC by instructions https://pjreddie.com/darknet/yolo/
+1. download dataset from http://www.robots.ox.ac.uk/~vgg/data/hands/downloads/hand_dataset.tar.gz
+2. copy mat_to_xml.py and xml_writer.py to folder "hand_dataset/training_dataset/training_data/" and "python mat_to_xml.py" (change .mat annotations to .xml annotations)
+3. put the .xml and .jpg data in your folder correspondingly /darknet/scripts/VOCdevkit/VOC2012/Annotations , /darknet_train/scripts/VOCdevkit/VOC2012/JPEGImages
+4. modify yolov3-tiny.cfg, voc.data, voc.names in your darknet ,then you can train "./darknet detector train cfg/voc.data cfg/yolov3-tiny.cfg darknet53.conv.74 -gpus 0"
